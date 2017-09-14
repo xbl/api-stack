@@ -19,6 +19,7 @@ public class HelloResource {
 
     @GetMapping("/greeting")
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+        //Test git commit
         return new Greeting(counter.incrementAndGet(),
                 String.format(TEMPLATE, name));
     }
