@@ -7,11 +7,5 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ExamResourceTest {
-    @Test
-    public void greeting() throws Exception {
-        HelloResource helloResource = new HelloResource();
-        Greeting result = helloResource.greeting("Man");
-        assertThat(result.getContent()).isEqualTo("Hello, Man!");
-        assertThat(result.getId()).isNotNull();
-    }
+
 }
