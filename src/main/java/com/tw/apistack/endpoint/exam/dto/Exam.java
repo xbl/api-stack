@@ -14,11 +14,11 @@ public class Exam {
     }
 
     public Date getEndDate() {
-        return new Date(startDateNum);
+        return new Date(endDateNum);
     }
 
     public Date getStartDate() {
-        return new Date(endDateNum);
+        return new Date(startDateNum);
     }
 
     public void setStartDateNum(long startDateNum) {
