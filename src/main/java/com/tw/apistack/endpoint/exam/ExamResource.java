@@ -15,7 +15,7 @@ public class ExamResource {
 
     @PostMapping(value = "/exam")
     public Response createExam(@RequestBody Exam exam){
-        HttpStatus httpStatus = ExamService.getInstance().creteExam(exam) ? HttpStatus.OK : HttpStatus.BAD_REQUEST;
+        HttpStatus httpStatus = ExamService.getInstance().createExam(exam) ? HttpStatus.OK : HttpStatus.BAD_REQUEST;
         return new Response(httpStatus, "", null);
     }
 

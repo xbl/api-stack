@@ -19,8 +19,13 @@ public class ExamService {
         return instance;
     }
 
-    public boolean creteExam(Exam exam) {
-        return IsValid(exam);
+    public boolean createExam(Exam exam) {
+        boolean isValid = IsValid(exam);
+        if(isValid) {
+            this.exam = exam;
+        }
+
+        return isValid;
     }
 
     public Exam getCurrentExam(){
@@ -37,7 +42,6 @@ public class ExamService {
 
         return  (startDate.after(today) || startDate.equals(today)) && endDate.after(startDate);
     }
-
 
     private Date getToday(){
         Calendar today = Calendar.getInstance();

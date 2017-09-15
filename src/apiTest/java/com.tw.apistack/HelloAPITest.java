@@ -28,7 +28,6 @@ public class HelloAPITest {
     public void setup() {
         RestAssured.port = this.port;
         RestAssured.baseURI = "http://localhost";
-
     }
 
     @Test
