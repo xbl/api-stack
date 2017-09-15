@@ -1,5 +1,6 @@
 package com.tw.apistack.endpoint.exam;
 
+import com.tw.apistack.core.response.Response;
 import com.tw.apistack.endpoint.exam.dto.Exam;
 import com.tw.apistack.service.ExamService;
 import org.springframework.http.HttpStatus;
@@ -13,12 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class ExamResource {
 
     @PostMapping(value = "/exam")
-    public HttpStatus createExam(@RequestBody Exam exam){
-        return ExamService.getInstance().creteExam(exam) ? HttpStatus.OK : HttpStatus.BAD_REQUEST;
+    public Response createExam(@RequestBody Exam exam){
+        HttpStatus httpStatus = ExamService.getInstance().creteExam(exam) ? HttpStatus.OK : HttpStatus.BAD_REQUEST;
+        return new Response(httpStatus, "", null);
     }
 
     @GetMapping("/exam")
-    public Exam getExam() {
-        return ExamService.getInstance().getCurrentExam();
+    public Response getExam() {
+        Exam exam = ExamService.getInstance().getCurrentExam();
+        return new Response(HttpStatus.OK, "", exam);
     }
 }
