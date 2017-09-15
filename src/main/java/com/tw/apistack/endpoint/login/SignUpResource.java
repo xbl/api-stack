@@ -28,7 +28,7 @@ public class SignUpResource {
     @PostMapping("/signup")
     public Response signUp(@RequestBody Candidate candidate) {
 
-        if(candidate == null) {
+        if(candidate == null || candidate.getPhoneNumber() == null || candidate.getLocation() == null || candidate.getName() == null) {
             return new Response(HttpStatus.BAD_REQUEST, CANDIDATE_INFO_MISSING_MESSAGE, null);
         }
 
